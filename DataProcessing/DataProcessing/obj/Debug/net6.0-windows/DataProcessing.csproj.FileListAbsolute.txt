@@ -36,3 +36,6 @@ C:\Users\dakro\Documents\GitHub\application\DataProcessing\DataProcessing\obj\De
 C:\Users\dakro\Documents\GitHub\application\DataProcessing\DataProcessing\obj\Debug\net6.0-windows\DataProcessing.pdb
 C:\Users\dakro\Documents\GitHub\application\DataProcessing\DataProcessing\obj\Debug\net6.0-windows\DataProcessing.genruntimeconfig.cache
 C:\Users\dakro\Documents\GitHub\application\DataProcessing\DataProcessing\obj\Debug\net6.0-windows\ref\DataProcessing.dll
+C:\Users\dakro\Documents\GitHub\application\DataProcessing\DataProcessing\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\dakro\Documents\GitHub\application\DataProcessing\DataProcessing\bin\Debug\net6.0-windows\Newtonsoft.Json.Schema.dll
+C:\Users\dakro\Documents\GitHub\application\DataProcessing\DataProcessing\obj\Debug\net6.0-windows\DataProcessing.csproj.CopyComplete
