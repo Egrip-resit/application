@@ -41,12 +41,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -100,6 +101,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -194,24 +196,34 @@
             this.panel3.Size = new System.Drawing.Size(800, 450);
             this.panel3.TabIndex = 5;
             // 
-            // label3
+            // button8
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(275, 39);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(236, 37);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Make New Route";
+            this.button8.Location = new System.Drawing.Point(681, 415);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(107, 23);
+            this.button8.TabIndex = 5;
+            this.button8.Text = "Back to Menu";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // textBox2
+            // button7
             // 
-            this.textBox2.Location = new System.Drawing.Point(200, 134);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(157, 23);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "Enter Location One";
+            this.button7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button7.Location = new System.Drawing.Point(305, 205);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(163, 30);
+            this.button7.TabIndex = 4;
+            this.button7.Text = "Make New Route";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(418, 134);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(157, 23);
+            this.textBox3.TabIndex = 3;
+            this.textBox3.Text = "Enter Location Two";
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label4
             // 
@@ -225,34 +237,35 @@
             this.label4.Text = "->";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // textBox3
+            // textBox2
             // 
-            this.textBox3.Location = new System.Drawing.Point(418, 134);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(157, 23);
-            this.textBox3.TabIndex = 3;
-            this.textBox3.Text = "Enter Location Two";
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.textBox2.Location = new System.Drawing.Point(200, 134);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(157, 23);
+            this.textBox2.TabIndex = 1;
+            this.textBox2.Text = "Enter Location One";
             // 
-            // button7
+            // label3
             // 
-            this.button7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button7.Location = new System.Drawing.Point(305, 205);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(163, 30);
-            this.button7.TabIndex = 4;
-            this.button7.Text = "Make New Route";
-            this.button7.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(275, 39);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(236, 37);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Make New Route";
             // 
-            // button8
+            // label5
             // 
-            this.button8.Location = new System.Drawing.Point(681, 415);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(107, 23);
-            this.button8.TabIndex = 5;
-            this.button8.Text = "Back to Menu";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.SystemColors.Control;
+            this.label5.Location = new System.Drawing.Point(546, 21);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(251, 37);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "All Current Routes";
             // 
             // Home
             // 
@@ -271,6 +284,7 @@
             this.Text = "Home";
             this.Load += new System.EventHandler(this.Home_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -302,5 +316,6 @@
         private TextBox textBox3;
         private Button button8;
         private Button button7;
+        private Label label5;
     }
 }
