@@ -39,7 +39,7 @@ namespace DataProcessing
             List<PointLatLng> points = new List<PointLatLng>();
             points.Add(new PointLatLng(52.7887, 6.8323));
             points.Add(new PointLatLng(53.0037, 6.4515));
-            GMapRoute route = new GMapRoute(points, "A walk in the park");
+            GMapRoute route = new GMapRoute(points, "A generated route");
             route.Stroke = new Pen(Color.Red, 3);
             routes.Routes.Add(route);
             gmap.Overlays.Add(routes);
