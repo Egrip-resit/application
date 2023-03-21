@@ -36,7 +36,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.viewGoogle = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,13 +57,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.viewGoogle = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -155,8 +156,23 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // viewGoogle
+            // 
+            this.viewGoogle.HeaderText = "View on map";
+            this.viewGoogle.Name = "viewGoogle";
+            this.viewGoogle.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.viewGoogle.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // delete
+            // 
+            this.delete.HeaderText = "Delete";
+            this.delete.Name = "delete";
+            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button10);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
@@ -173,6 +189,68 @@
             this.panel2.TabIndex = 5;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // button10
+            // 
+            this.button10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button10.Location = new System.Drawing.Point(360, 263);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(159, 33);
+            this.button10.TabIndex = 9;
+            this.button10.Text = "Add Location (XML)";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.SystemColors.Control;
+            this.label8.Location = new System.Drawing.Point(129, 214);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(88, 21);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Longitude";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.SystemColors.Control;
+            this.label7.Location = new System.Drawing.Point(144, 182);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 21);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Latitude";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.SystemColors.Control;
+            this.label6.Location = new System.Drawing.Point(71, 147);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(146, 21);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Name of Location";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(223, 212);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(342, 23);
+            this.textBox5.TabIndex = 5;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(223, 180);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(342, 23);
+            this.textBox4.TabIndex = 4;
+            // 
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(680, 415);
@@ -186,7 +264,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button5.Location = new System.Drawing.Point(325, 269);
+            this.button5.Location = new System.Drawing.Point(223, 263);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(131, 33);
             this.button5.TabIndex = 2;
@@ -296,70 +374,6 @@
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(223, 180);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(342, 23);
-            this.textBox4.TabIndex = 4;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(223, 212);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(342, 23);
-            this.textBox5.TabIndex = 5;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(71, 147);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(146, 21);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Name of Location";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(129, 182);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 21);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Longitude";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.SystemColors.Control;
-            this.label8.Location = new System.Drawing.Point(144, 214);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(73, 21);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Latitude";
-            // 
-            // viewGoogle
-            // 
-            this.viewGoogle.HeaderText = "View on map";
-            this.viewGoogle.Name = "viewGoogle";
-            this.viewGoogle.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.viewGoogle.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // delete
-            // 
-            this.delete.HeaderText = "Delete";
-            this.delete.Name = "delete";
-            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -419,5 +433,6 @@
         private TextBox textBox4;
         private DataGridViewButtonColumn viewGoogle;
         private DataGridViewButtonColumn delete;
+        private Button button10;
     }
 }
