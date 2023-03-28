@@ -24,26 +24,6 @@ namespace DataProcessing
         {
             InitializeComponent();
         }
-
-        public bool jsonValidator()
-        {
-            JSchema schema = JSchema.Parse(@"{
-                'type': 'object',
-                'properties': {
-                 'name': {'type':'string'}
-                }
-              }");
-
-            JObject user = JObject.Parse(@"{
-             'name': 'Alex'
-            }");
-
-            bool valid = user.IsValid(schema);
-
-            return valid;
-        }
-
-
         private void button2_Click(object sender, EventArgs e)
         {
             panel3.Visible = true;
@@ -54,21 +34,10 @@ namespace DataProcessing
             panel2.Visible = true;
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            panel1.Visible = true;
-        }
-
         private void Home_Load(object sender, EventArgs e)
         {
-            panel1.Visible = false;
             panel2.Visible = false;
             panel3.Visible = false;
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            panel1.Visible = false;
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -89,16 +58,10 @@ namespace DataProcessing
 
         private async void button5_Click(object sender, EventArgs e)
         {
-            var data = new
-            {
-                name = textBox1.Text,
-                latitude = textBox4.Text,
-                longitude = textBox5.Text
-            };
+            string latitude = double.Parse(textBox4.Text).ToString("0.##########");
+            string longitude = double.Parse(textBox5.Text).ToString("0.##########");
 
-
-
-            var json = JsonConvert.SerializeObject(data);
+            string json = $"{{\"place\":{{\"{textBox1.Text}\":{{\"coordinates\":{{\"latitude\":{latitude},\"longitude\":{longitude}}}}}}}}}";
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
             using (var client = new HttpClient())
@@ -117,11 +80,6 @@ namespace DataProcessing
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -133,12 +91,6 @@ namespace DataProcessing
             Map map = new Map();
             map.ShowDialog();
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void label8_Click(object sender, EventArgs e)
         {
 
