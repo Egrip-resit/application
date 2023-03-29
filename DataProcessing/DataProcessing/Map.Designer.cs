@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.gmap = new GMap.NET.WindowsForms.GMapControl();
-            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -51,12 +53,15 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.Desktop;
+            this.splitContainer1.Panel1.Controls.Add(this.button5);
+            this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.button4);
             this.splitContainer1.Panel1.Controls.Add(this.button3);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.textBox1);
             this.splitContainer1.Panel1.Controls.Add(this.button2);
             this.splitContainer1.Panel1.Controls.Add(this.button1);
+            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
             // splitContainer1.Panel2
             // 
@@ -65,12 +70,43 @@
             this.splitContainer1.SplitterDistance = 266;
             this.splitContainer1.TabIndex = 0;
             // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button5.Location = new System.Drawing.Point(12, 194);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(241, 81);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "Add Location (XML)";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(12, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 15);
+            this.label1.TabIndex = 8;
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button4.Location = new System.Drawing.Point(12, 281);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(241, 83);
+            this.button4.TabIndex = 7;
+            this.button4.Text = "Show Route";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(12, 278);
+            this.button3.Location = new System.Drawing.Point(12, 370);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(241, 77);
+            this.button3.Size = new System.Drawing.Size(241, 30);
             this.button3.TabIndex = 6;
             this.button3.Text = "Clear Route";
             this.button3.UseVisualStyleBackColor = true;
@@ -96,9 +132,9 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(12, 112);
+            this.button2.Location = new System.Drawing.Point(12, 104);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(241, 77);
+            this.button2.Size = new System.Drawing.Size(241, 84);
             this.button2.TabIndex = 1;
             this.button2.Text = "Add Location";
             this.button2.UseVisualStyleBackColor = true;
@@ -107,9 +143,9 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(12, 361);
+            this.button1.Location = new System.Drawing.Point(12, 406);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(241, 77);
+            this.button1.Size = new System.Drawing.Size(241, 32);
             this.button1.TabIndex = 0;
             this.button1.Text = "Go back to menu";
             this.button1.UseVisualStyleBackColor = true;
@@ -141,17 +177,6 @@
             this.gmap.TabIndex = 0;
             this.gmap.Zoom = 13D;
             // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(12, 195);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(241, 77);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Show Route";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // Map
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -180,5 +205,7 @@
         private TextBox textBox1;
         private Button button3;
         private Button button4;
+        private Label label1;
+        private Button button5;
     }
 }

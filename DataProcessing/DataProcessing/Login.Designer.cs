@@ -52,9 +52,9 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(12, 158);
+            this.button2.Location = new System.Drawing.Point(211, 158);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(187, 31);
+            this.button2.Size = new System.Drawing.Size(205, 31);
             this.button2.TabIndex = 1;
             this.button2.Text = "Register Here";
             this.button2.UseVisualStyleBackColor = true;

@@ -47,38 +47,91 @@ namespace DataProcessing
 
         private async void button2_Click(object sender, EventArgs e)
         {
-
-            using (var client = new HttpClient())
+            if (!string.IsNullOrEmpty(textBox1.Text))
             {
-                var request = new HttpRequestMessage
+                using (var client = new HttpClient())
                 {
-                    Method = HttpMethod.Get,
-                    RequestUri = new Uri("http://127.0.0.1:5000/api/resources/place?id="+textBox1.Text),
-                    Content = new StringContent("", Encoding.UTF8, "application/json")
-                };
-
-                request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-
-                var response = await client.SendAsync(request);
-                var responseString = await response.Content.ReadAsStringAsync();
-                label2.Text = responseString;
-
-                var jsonObject = JObject.Parse(responseString);
-                var placesArray = jsonObject["places"] as JArray;
-
-                if (placesArray != null && placesArray.Count > 0)
-                {
-                    var placeObject = placesArray?[0] as JObject;
-                    var cityName = placeObject.Properties().FirstOrDefault()?.Name;
-                    var coordinatesObject = placeObject.Value<JObject>()[cityName]?["coordinates"]; if (coordinatesObject != null)
+                    var request = new HttpRequestMessage
                     {
-                        var latitude = (double)coordinatesObject["latitude"];
-                        var longitude = (double)coordinatesObject["longitude"];
-                        points.Add(new PointLatLng(latitude, longitude));
+                        Method = HttpMethod.Get,
+                        RequestUri = new Uri("http://127.0.0.1:5000/api/resources/place?id=" + textBox1.Text),
+                        Content = new StringContent("", Encoding.UTF8, "application/json")
+                    };
+
+                    request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+                    var response = await client.SendAsync(request);
+                    var responseString = await response.Content.ReadAsStringAsync();
+
+                    var jsonObject = JObject.Parse(responseString);
+                    var placesArray = jsonObject["places"] as JArray;
+
+                    if (placesArray != null && placesArray.Count > 0)
+                    {
+                        var placeObject = placesArray?[0] as JObject;
+                        var cityName = placeObject.Properties().FirstOrDefault()?.Name;
+                        var coordinatesObject = placeObject.Value<JObject>()[cityName]?["coordinates"]; if (coordinatesObject != null)
+                        {
+                            var latitude = (double)coordinatesObject["latitude"];
+                            var longitude = (double)coordinatesObject["longitude"];
+                            points.Add(new PointLatLng(latitude, longitude));
+                            label1.Text = "Location Added!";
+                        }
                     }
                 }
             }
+            else
+            {
+                MessageBox.Show("Please enter an ID for the location");
+            }
         }
+
+        private async void button5_click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textBox1.Text))
+            {
+                using (var client = new HttpClient())
+                {
+                    var request = new HttpRequestMessage
+                    {
+                        Method = HttpMethod.Get,
+                        RequestUri = new Uri("http://127.0.0.1:5000/api/resources/place?id=" + textBox1.Text),
+                        Content = new StringContent("", Encoding.UTF8, "application/xml")
+                    };
+
+                    request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/xml");
+
+                    var response = await client.SendAsync(request);
+                    var responseString = await response.Content.ReadAsStringAsync();
+
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(responseString);
+
+                    var placeNode = xmlDoc.SelectSingleNode("//place");
+
+                    if (placeNode != null)
+                    {
+                        var cityName = placeNode.SelectSingleNode("name")?.InnerText;
+
+                        var coordinatesNode = placeNode.SelectSingleNode("coordinates");
+
+                        if (coordinatesNode != null)
+                        {
+                            var latitude = double.Parse(coordinatesNode.SelectSingleNode("latitude").InnerText);
+                            var longitude = double.Parse(coordinatesNode.SelectSingleNode("longitude").InnerText);
+
+                            points.Add(new PointLatLng(latitude, longitude));
+                            label1.Text = "Location Added!";
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter an ID for the location");
+            }
+        }
+
 
 
         private void button3_Click(object sender, EventArgs e)
@@ -112,6 +165,11 @@ namespace DataProcessing
             }
 
             gmap.Overlays.Add(routes);
+
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }
