@@ -13,6 +13,7 @@ using System.Xml;
 using Newtonsoft.Json.Linq;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
+using System.Globalization;
 
 namespace DataProcessing
 {
@@ -117,9 +118,8 @@ namespace DataProcessing
 
                         if (coordinatesNode != null)
                         {
-                            var latitude = double.Parse(coordinatesNode.SelectSingleNode("latitude").InnerText);
-                            var longitude = double.Parse(coordinatesNode.SelectSingleNode("longitude").InnerText);
-
+                            var latitude = float.Parse(coordinatesNode.SelectSingleNode("latitude").InnerText, CultureInfo.InvariantCulture);
+                            var longitude = float.Parse(coordinatesNode.SelectSingleNode("longitude").InnerText, CultureInfo.InvariantCulture);
                             points.Add(new PointLatLng(latitude, longitude));
                             label1.Text = "Location Added!";
                         }
