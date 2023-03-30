@@ -58,8 +58,8 @@ namespace DataProcessing
 
         private async void button5_Click(object sender, EventArgs e)
         {
-            string latitude = double.Parse(textBox4.Text).ToString("0.##########");
-            string longitude = double.Parse(textBox5.Text).ToString("0.##########");
+            string latitude = double.Parse(textBox4.Text).ToString();
+            string longitude = double.Parse(textBox5.Text).ToString();
 
             string json = $"{{\"place\":{{\"{textBox1.Text}\":{{\"coordinates\":{{\"latitude\":{latitude},\"longitude\":{longitude}}}}}}}}}";
             var content = new StringContent(json, Encoding.UTF8, "application/json");
